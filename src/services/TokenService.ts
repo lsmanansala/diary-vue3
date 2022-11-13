@@ -5,7 +5,7 @@ export default class TokenService {
     const encrypted = sessionStorage.getItem("jwt");
     const token = this.decrypt(encrypted?.toString());
 
-    return token;
+    return `Bearer ${token}`;
   }
   setJwtToken(token: string) {
     const encrypted = this.encrypt(token)
